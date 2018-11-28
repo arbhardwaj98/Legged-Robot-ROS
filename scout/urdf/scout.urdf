@@ -1,0 +1,324 @@
+<robot
+  name="scout" xmlns:xacro="http://www.ros.org/wiki/xacro">
+  <gazebo>
+    <plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
+      <robotNamespace>/scout</robotNamespace>
+      <robotSimType>gazebo_ros_control/DefaultRobotHWSim</robotSimType>
+    </plugin>
+  </gazebo>
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="0.083033 -0.15433 0.10443"
+        rpy="0 0 0" />
+      <mass
+        value="4.44358" />
+      <inertia
+        ixx="0.00132422325"
+        ixy="0"
+        ixz="2.480178E-05"
+        iyy="0.00409972562"
+        iyz="0"
+        izz="0.0028257977" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://scout/meshes/base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 0.3" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://scout/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="leg1">
+    <inertial>
+      <origin
+        xyz="-0.05111 2.7756E-17 0.003"
+        rpy="0 0 0" />
+      <mass
+        value="0.0163" />
+      <inertia
+        ixx="5.84E-07"
+        ixy="0"
+        ixz="0"
+        iyy="1.7794E-05"
+        iyz="0"
+        izz="1.828E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://scout/meshes/leg1.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 0.3" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://scout/meshes/leg1.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint1"
+    type="continuous">
+    <origin
+      xyz="0.17303 -0.071332 0.10916"
+      rpy="1.5708 -1.5708 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="leg1" />
+    <axis
+      xyz="0 0 1" />
+    <dynamics friction="0.5" />
+    <mu1 value="0.7" />
+    <mu2 value="0.7" />
+  </joint>
+  <link
+    name="leg2">
+    <inertial>
+      <origin
+        xyz="-0.05111 -2.2551E-17 0.003"
+        rpy="0 0 0" />
+      <mass
+        value="0.0163" />
+      <inertia
+        ixx="5.84E-07"
+        ixy="0"
+        ixz="0"
+        iyy="1.7794E-05"
+        iyz="0"
+        izz="1.828E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://scout/meshes/leg2.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 0.3" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://scout/meshes/leg2.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint2"
+    type="continuous">
+    <origin
+      xyz="-0.0069671 -0.069332 0.10916"
+      rpy="1.5708 -1.5708 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="leg2" />
+    <axis
+      xyz="0 0 1" />
+    <dynamics friction="0.50" />
+    <mu1 value="0.7" />
+    <mu2 value="0.7" />
+  </joint>
+  <link
+    name="leg3">
+    <inertial>
+      <origin
+        xyz="-0.05111 0 -0.003"
+        rpy="0 0 0" />
+      <mass
+        value="0.0163" />
+      <inertia
+        ixx="5.84E-07"
+        ixy="0"
+        ixz="0"
+        iyy="1.7794E-05"
+        iyz="0"
+        izz="1.828E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://scout/meshes/leg3.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 0.3" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://scout/meshes/leg3.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint3"
+    type="continuous">
+    <origin
+      xyz="0.17303 -0.23333 0.10916"
+      rpy="1.5708 -1.5708 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="leg3" />
+    <axis
+      xyz="0 0 -1" />
+    <dynamics friction="0.50"/>
+    <mu1 value="0.7" />
+    <mu2 value="0.7" />
+  </joint>
+  <link
+    name="leg4">
+    <inertial>
+      <origin
+        xyz="-0.05111 0 0.003"
+        rpy="0 0 0" />
+      <mass
+        value="0.0163" />
+      <inertia
+        ixx="5.84E-07"
+        ixy="0"
+        ixz="0"
+        iyy="1.7794E-05"
+        iyz="0"
+        izz="1.828E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://scout/meshes/leg4.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 0.3" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://scout/meshes/leg4.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint4"
+    type="continuous">
+    <origin
+      xyz="-0.0069671 -0.23133 0.10916"
+      rpy="1.5708 -1.5708 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="leg4" />
+    <axis
+      xyz="0 0 1" />
+    <dynamics friction="0.50" />
+    <mu1 value="0.7" />
+    <mu2 value="0.7" />
+  </joint>
+  <gazebo>
+    <plugin name="object_controller" filename="libgazebo_ros_planar_move.so">
+      <commandTopic>/scout/cmd_vel</commandTopic>
+      <odometryTopic>odom</odometryTopic>
+      <odometryFrame>odom</odometryFrame>
+      <odometryRate>20.0</odometryRate>
+      <robotBaseFrame>base_link</robotBaseFrame>
+    </plugin>
+  </gazebo>
+  <transmission name="trans1">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="joint1">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="motor1">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+  <transmission name="trans2">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="joint2">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="motor2">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+  <transmission name="trans3">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="joint3">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="motor3">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+  <transmission name="trans4">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="joint4">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="motor4">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+</robot>
+
+

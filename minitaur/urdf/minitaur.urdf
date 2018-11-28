@@ -1,0 +1,916 @@
+<robot
+  name="minitaur" xmlns:xacro="http://www.ros.org/wiki/xacro">
+  <gazebo>
+    <plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
+      <robotNamespace>/minitaur</robotNamespace>
+      <robotSimType>gazebo_ros_control/DefaultRobotHWSim</robotSimType>
+    </plugin>
+  </gazebo>
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="0.083033 -0.15433 0.00624"
+        rpy="0 0 0" />
+      <mass
+        value="0.71915" />
+      <inertia
+        ixx="0.0023612"
+        ixy="0"
+        ixz="6.8894E-06"
+        iyy="0.0062972"
+        iyz="0"
+        izz="0.0040109" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://minitaur/meshes/base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 0.3" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://minitaur/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="leg1a1">
+    <inertial>
+      <origin
+        xyz="0.027399 0 -0.008649"
+        rpy="0 0 0" />
+      <mass
+        value="0.0096655" />
+      <inertia
+        ixx="3.47E-07"
+        ixy="0"
+        ixz="7.67E-08"
+        iyy="3.57E-06"
+        iyz="0"
+        izz="3.82E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://minitaur/meshes/leg1a1.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 0.3" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://minitaur/meshes/leg1a1.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="leg1j1"
+    type="continuous">
+    <origin
+      xyz="0.17303 -0.071332 0.10916"
+      rpy="-1.5708 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="leg1a1" />
+    <axis
+      xyz="0 0 -1" />
+  </joint>
+  <link
+    name="leg1a2">
+    <inertial>
+      <origin
+        xyz="-0.053394 -1.3878E-17 -0.0027964"
+        rpy="0 0 0" />
+      <mass
+        value="0.016662" />
+      <inertia
+        ixx="6.06E-07"
+        ixy="0"
+        ixz="-1.58E-07"
+        iyy="1.85E-05"
+        iyz="0"
+        izz="1.9E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://minitaur/meshes/leg1a2.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 0.3" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://minitaur/meshes/leg1a2.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="leg1j2"
+    type="continuous">
+    <origin
+      xyz="0.05 0 0"
+      rpy="5.5511E-15 5.9165E-30 -0.89566" />
+    <parent
+      link="leg1a1" />
+    <child
+      link="leg1a2" />
+    <axis
+      xyz="0 0 -1" />
+  </joint>
+  <link
+    name="leg1a3">
+    <inertial>
+      <origin
+        xyz="0.027399 -2.7756E-17 -0.008649"
+        rpy="0 0 0" />
+      <mass
+        value="0.0096655" />
+      <inertia
+        ixx="3.47E-07"
+        ixy="0"
+        ixz="7.67E-08"
+        iyy="3.57E-06"
+        iyz="0"
+        izz="3.82E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://minitaur/meshes/leg1a3.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 0.3" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://minitaur/meshes/leg1a3.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="leg1j3"
+    type="continuous">
+    <origin
+      xyz="0.14803 -0.065332 0.10916"
+      rpy="1.5708 0 3.1416" />
+    <parent
+      link="base_link" />
+    <child
+      link="leg1a3" />
+    <axis
+      xyz="0 0 -1" />
+  </joint>
+  <link
+    name="leg1a4">
+    <inertial>
+      <origin
+        xyz="0.05 2.7756E-17 0.003"
+        rpy="0 0 0" />
+      <mass
+        value="0.015531" />
+      <inertia
+        ixx="5.76E-07"
+        ixy="0"
+        ixz="0"
+        iyy="1.59E-05"
+        iyz="0"
+        izz="1.64E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://minitaur/meshes/leg1a4.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 0.3" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://minitaur/meshes/leg1a4.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="leg1j4"
+    type="continuous">
+    <origin
+      xyz="0.05 0 0"
+      rpy="3.1416 0 -2.2459" />
+    <parent
+      link="leg1a3" />
+    <child
+      link="leg1a4" />
+    <axis
+      xyz="0 0 1" />
+  </joint>
+  <link
+    name="leg2a1">
+    <inertial>
+      <origin
+        xyz="0.027399 -1.3878E-17 -0.008649"
+        rpy="0 0 0" />
+      <mass
+        value="0.0096655" />
+      <inertia
+        ixx="3.47E-07"
+        ixy="0"
+        ixz="7.67E-08"
+        iyy="3.57E-06"
+        iyz="0"
+        izz="3.82E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://minitaur/meshes/leg2a1.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 0.3" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://minitaur/meshes/leg2a1.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="leg2j1"
+    type="continuous">
+    <origin
+      xyz="0.018033 -0.071332 0.10916"
+      rpy="-1.5708 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="leg2a1" />
+    <axis
+      xyz="0 0 -1" />
+  </joint>
+  <link
+    name="leg2a2">
+    <inertial>
+      <origin
+        xyz="-0.053394 -4.6838E-17 -0.0027964"
+        rpy="0 0 0" />
+      <mass
+        value="0.016662" />
+      <inertia
+        ixx="6.06E-07"
+        ixy="0"
+        ixz="-1.58E-07"
+        iyy="1.85E-05"
+        iyz="0"
+        izz="1.9E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://minitaur/meshes/leg2a2.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 0.3" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://minitaur/meshes/leg2a2.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="leg2j2"
+    type="continuous">
+    <origin
+      xyz="0.05 0 0"
+      rpy="5.5511E-15 0 -0.89566" />
+    <parent
+      link="leg2a1" />
+    <child
+      link="leg2a2" />
+    <axis
+      xyz="0 0 -1" />
+  </joint>
+  <link
+    name="leg2a3">
+    <inertial>
+      <origin
+        xyz="0.027399 2.7756E-17 -0.008649"
+        rpy="0 0 0" />
+      <mass
+        value="0.0096655" />
+      <inertia
+        ixx="3.47E-07"
+        ixy="0"
+        ixz="7.67E-08"
+        iyy="3.57E-06"
+        iyz="0"
+        izz="3.82E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://minitaur/meshes/leg2a3.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 0.3" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://minitaur/meshes/leg2a3.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="leg2j3"
+    type="continuous">
+    <origin
+      xyz="-0.0069671 -0.065332 0.10916"
+      rpy="1.5708 6.0715E-16 -3.1416" />
+    <parent
+      link="base_link" />
+    <child
+      link="leg2a3" />
+    <axis
+      xyz="0 0 -1" />
+  </joint>
+  <link
+    name="leg2a4">
+    <inertial>
+      <origin
+        xyz="-0.05 -6.9389E-18 0.003"
+        rpy="0 0 0" />
+      <mass
+        value="0.015531" />
+      <inertia
+        ixx="5.76E-07"
+        ixy="0"
+        ixz="0"
+        iyy="1.59E-05"
+        iyz="0"
+        izz="1.64E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://minitaur/meshes/leg2a4.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 0.3" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://minitaur/meshes/leg2a4.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="leg2j4"
+    type="continuous">
+    <origin
+      xyz="0.05 0 0"
+      rpy="3.1416 0 0.89566" />
+    <parent
+      link="leg2a3" />
+    <child
+      link="leg2a4" />
+    <axis
+      xyz="0 0 1" />
+  </joint>
+  <link
+    name="leg3a1">
+    <inertial>
+      <origin
+        xyz="0.027399 0 0.003351"
+        rpy="0 0 0" />
+      <mass
+        value="0.0096655" />
+      <inertia
+        ixx="3.47E-07"
+        ixy="0"
+        ixz="7.67E-08"
+        iyy="3.57E-06"
+        iyz="0"
+        izz="3.82E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://minitaur/meshes/leg3a1.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 0.3" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://minitaur/meshes/leg3a1.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="leg3j1"
+    type="continuous">
+    <origin
+      xyz="0.14803 -0.22533 0.10916"
+      rpy="-1.5708 0 3.1416" />
+    <parent
+      link="base_link" />
+    <child
+      link="leg3a1" />
+    <axis
+      xyz="0 0 1" />
+  </joint>
+  <link
+    name="leg3a2">
+    <inertial>
+      <origin
+        xyz="-0.053394 2.7756E-17 0.0032036"
+        rpy="0 0 0" />
+      <mass
+        value="0.016662" />
+      <inertia
+        ixx="6.06E-07"
+        ixy="0"
+        ixz="-1.58E-07"
+        iyy="1.85E-05"
+        iyz="0"
+        izz="1.9E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://minitaur/meshes/leg3a2.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 0.3" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://minitaur/meshes/leg3a2.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="leg3j2"
+    type="continuous">
+    <origin
+      xyz="0.05 0 0.006"
+      rpy="0 0 -0.89566" />
+    <parent
+      link="leg3a1" />
+    <child
+      link="leg3a2" />
+    <axis
+      xyz="0 0 1" />
+  </joint>
+  <link
+    name="leg3a3">
+    <inertial>
+      <origin
+        xyz="0.027399 2.7756E-17 0.003351"
+        rpy="0 0 0" />
+      <mass
+        value="0.0096655" />
+      <inertia
+        ixx="3.47E-07"
+        ixy="0"
+        ixz="7.67E-08"
+        iyy="3.57E-06"
+        iyz="0"
+        izz="3.82E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://minitaur/meshes/leg3a3.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 0.3" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://minitaur/meshes/leg3a3.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="leg3j3"
+    type="continuous">
+    <origin
+      xyz="0.17303 -0.23133 0.10916"
+      rpy="1.5708 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="leg3a3" />
+    <axis
+      xyz="0 0 1" />
+  </joint>
+  <link
+    name="leg3a4">
+    <inertial>
+      <origin
+        xyz="0.05 2.7756E-17 0.003"
+        rpy="0 0 0" />
+      <mass
+        value="0.015531" />
+      <inertia
+        ixx="5.76E-07"
+        ixy="0"
+        ixz="0"
+        iyy="1.59E-05"
+        iyz="0"
+        izz="1.64E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://minitaur/meshes/leg3a4.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 0.3" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://minitaur/meshes/leg3a4.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="leg3j4"
+    type="continuous">
+    <origin
+      xyz="0.05 0 0.006"
+      rpy="0 0 -2.2459" />
+    <parent
+      link="leg3a3" />
+    <child
+      link="leg3a4" />
+    <axis
+      xyz="0 0 1" />
+  </joint>
+  <link
+    name="leg4a1">
+    <inertial>
+      <origin
+        xyz="0.027399 0 0.003351"
+        rpy="0 0 0" />
+      <mass
+        value="0.0096655" />
+      <inertia
+        ixx="3.47E-07"
+        ixy="0"
+        ixz="7.67E-08"
+        iyy="3.57E-06"
+        iyz="0"
+        izz="3.82E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://minitaur/meshes/leg4a1.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 0.3" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://minitaur/meshes/leg4a1.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="leg4j1"
+    type="continuous">
+    <origin
+      xyz="-0.0069671 -0.22533 0.10916"
+      rpy="-1.5708 -8.6736E-17 3.1416" />
+    <parent
+      link="base_link" />
+    <child
+      link="leg4a1" />
+    <axis
+      xyz="0 0 1" />
+  </joint>
+  <link
+    name="leg4a2">
+    <inertial>
+      <origin
+        xyz="-0.053394 -3.1225E-17 0.0032036"
+        rpy="0 0 0" />
+      <mass
+        value="0.016662" />
+      <inertia
+        ixx="6.06E-07"
+        ixy="0"
+        ixz="-1.58E-07"
+        iyy="1.85E-05"
+        iyz="0"
+        izz="1.9E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://minitaur/meshes/leg4a2.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 0.3" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://minitaur/meshes/leg4a2.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="leg4j2"
+    type="continuous">
+    <origin
+      xyz="0.05 0 0.006"
+      rpy="0 0 -0.89566" />
+    <parent
+      link="leg4a1" />
+    <child
+      link="leg4a2" />
+    <axis
+      xyz="0 0 1" />
+  </joint>
+  <link
+    name="leg4a3">
+    <inertial>
+      <origin
+        xyz="0.027399 1.3878E-17 0.003351"
+        rpy="0 0 0" />
+      <mass
+        value="0.0096655" />
+      <inertia
+        ixx="3.47E-07"
+        ixy="0"
+        ixz="7.67E-08"
+        iyy="3.57E-06"
+        iyz="0"
+        izz="3.82E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://minitaur/meshes/leg4a3.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 0.3" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://minitaur/meshes/leg4a3.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="leg4j3"
+    type="continuous">
+    <origin
+      xyz="0.018033 -0.23133 0.10916"
+      rpy="1.5708 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="leg4a3" />
+    <axis
+      xyz="0 0 1" />
+  </joint>
+  <link
+    name="leg4a4">
+    <inertial>
+      <origin
+        xyz="0.05 5.2042E-17 0.003"
+        rpy="0 0 0" />
+      <mass
+        value="0.015531" />
+      <inertia
+        ixx="5.76E-07"
+        ixy="0"
+        ixz="0"
+        iyy="1.59E-05"
+        iyz="0"
+        izz="1.64E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://minitaur/meshes/leg4a4.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 0.3" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://minitaur/meshes/leg4a4.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="leg4j4"
+    type="continuous">
+    <origin
+      xyz="0.05 0 0.006"
+      rpy="0 0 -2.2459" />
+    <parent
+      link="leg4a3" />
+    <child
+      link="leg4a4" />
+    <axis
+      xyz="0 0 1" />
+  </joint>
+  <gazebo>
+    <plugin name="object_controller" filename="libgazebo_ros_planar_move.so">
+      <commandTopic>/minitaur/cmd_vel</commandTopic>
+      <odometryTopic>odom</odometryTopic>
+      <odometryFrame>odom</odometryFrame>
+      <odometryRate>20.0</odometryRate>
+      <robotBaseFrame>base_link</robotBaseFrame>
+    </plugin>
+  </gazebo>
+ <transmission name="tran1">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="leg1j1">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="leg1m1">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+</robot>

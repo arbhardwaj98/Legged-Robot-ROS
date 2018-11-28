@@ -1,0 +1,11 @@
+minitaur:
+  # Publish all joint states -----------------------------------
+  /minitaur/joint_state_controller:
+    type: joint_state_controller/JointStateController
+    publish_rate: 50  
+
+  # Position Controllers ---------------------------------------
+  /minitaur/joint1_position_controller:
+    type: effort_controllers/JointPositionController
+    joint: leg1j1
+    pid: {p: 0.0010, i: 0.0001, d: 0.005}

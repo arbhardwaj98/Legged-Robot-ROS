@@ -1,0 +1,253 @@
+<sdf version='1.6'>
+  <model name='scout'>
+    <link name='base_link'>
+      <pose frame=''>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose frame=''>0.083033 -0.15433 0.10443 0 -0 0</pose>
+        <mass>0.44358</mass>
+        <inertia>
+          <ixx>0.00132422</ixx>
+          <ixy>0</ixy>
+          <ixz>2.48018e-05</ixz>
+          <iyy>0.00409973</iyy>
+          <iyz>0</iyz>
+          <izz>0.0028258</izz>
+        </inertia>
+      </inertial>
+      <collision name='base_link_collision'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://scout/meshes/base_link.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='base_link_visual'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://scout/meshes/base_link.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <link name='leg1'>
+      <pose frame=''>0.17303 -0.071332 0.10916 -1.57079 -1.57079 3.14159</pose>
+      <inertial>
+        <pose frame=''>-0.05111 0 0.003 0 -0 0</pose>
+        <mass>0.0163</mass>
+        <inertia>
+          <ixx>5.84e-07</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>1.7794e-05</iyy>
+          <iyz>0</iyz>
+          <izz>1.828e-05</izz>
+        </inertia>
+      </inertial>
+      <collision name='leg1_collision'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://scout/meshes/leg1.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='leg1_visual'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://scout/meshes/leg1.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name='joint1' type='revolute'>
+      <child>leg1</child>
+      <parent>base_link</parent>
+      <axis>
+        <xyz>4e-06 -1 0</xyz>
+        <limit>
+          <lower>-1e+16</lower>
+          <upper>1e+16</upper>
+        </limit>
+        <dynamics>
+          <damping>0</damping>
+          <friction>100</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+    </joint>
+    <link name='leg2'>
+      <pose frame=''>-0.006967 -0.069332 0.10916 -1.57079 -1.57079 3.14159</pose>
+      <inertial>
+        <pose frame=''>-0.05111 -0 0.003 0 -0 0</pose>
+        <mass>0.0163</mass>
+        <inertia>
+          <ixx>5.84e-07</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>1.7794e-05</iyy>
+          <iyz>0</iyz>
+          <izz>1.828e-05</izz>
+        </inertia>
+      </inertial>
+      <collision name='leg2_collision'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://scout/meshes/leg2.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='leg2_visual'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://scout/meshes/leg2.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name='joint2' type='revolute'>
+      <child>leg2</child>
+      <parent>base_link</parent>
+      <axis>
+        <xyz>4e-06 -1 0</xyz>
+        <limit>
+          <lower>-1e+16</lower>
+          <upper>1e+16</upper>
+        </limit>
+        <dynamics>
+          <damping>0</damping>
+          <friction>100</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+    </joint>
+    <link name='leg3'>
+      <pose frame=''>0.17303 -0.23333 0.10916 -1.57079 -1.57079 3.14159</pose>
+      <inertial>
+        <pose frame=''>-0.05111 0 -0.003 0 -0 0</pose>
+        <mass>0.0163</mass>
+        <inertia>
+          <ixx>5.84e-07</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>1.7794e-05</iyy>
+          <iyz>0</iyz>
+          <izz>1.828e-05</izz>
+        </inertia>
+      </inertial>
+      <collision name='leg3_collision'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://scout/meshes/leg3.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='leg3_visual'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://scout/meshes/leg3.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name='joint3' type='revolute'>
+      <child>leg3</child>
+      <parent>base_link</parent>
+      <axis>
+        <xyz>-4e-06 1 -0</xyz>
+        <limit>
+          <lower>-1e+16</lower>
+          <upper>1e+16</upper>
+        </limit>
+        <dynamics>
+          <damping>0</damping>
+          <friction>100</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+    </joint>
+    <link name='leg4'>
+      <pose frame=''>-0.006967 -0.23133 0.10916 -1.57079 -1.57079 3.14159</pose>
+      <inertial>
+        <pose frame=''>-0.05111 0 0.003 0 -0 0</pose>
+        <mass>0.0163</mass>
+        <inertia>
+          <ixx>5.84e-07</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>1.7794e-05</iyy>
+          <iyz>0</iyz>
+          <izz>1.828e-05</izz>
+        </inertia>
+      </inertial>
+      <collision name='leg4_collision'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://scout/meshes/leg4.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='leg4_visual'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://scout/meshes/leg4.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name='joint4' type='revolute'>
+      <child>leg4</child>
+      <parent>base_link</parent>
+      <axis>
+        <xyz>4e-06 -1 0</xyz>
+        <limit>
+          <lower>-1e+16</lower>
+          <upper>1e+16</upper>
+        </limit>
+        <dynamics>
+          <damping>0</damping>
+          <friction>100</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+    </joint>
+    <plugin name='gazebo_ros_control' filename='libgazebo_ros_control.so'>
+      <robotNamespace>/scout</robotNamespace>
+      <robotSimType>gazebo_ros_control/DefaultRobotHWSim</robotSimType>
+    </plugin>
+    <static>0</static>
+    <plugin name='object_controller' filename='libgazebo_ros_planar_move.so'>
+      <commandTopic>/scout/cmd_vel</commandTopic>
+      <odometryTopic>odom</odometryTopic>
+      <odometryFrame>odom</odometryFrame>
+      <odometryRate>20.0</odometryRate>
+      <robotBaseFrame>base_link</robotBaseFrame>
+    </plugin>
+  </model>
+</sdf>
