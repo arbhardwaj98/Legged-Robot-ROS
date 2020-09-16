@@ -1,6 +1,6 @@
 # Quadruped-Robot
 
-##Gazebo Simulation Packages for Ghost Minitaur and Scout Quadruped Robot
+## Gazebo Simulation Packages for Ghost Minitaur and Scout Quadruped Robot
 
 Contains:
 1) Description files (URDF and SDF)
